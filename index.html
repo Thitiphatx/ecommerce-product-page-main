@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | E-commerce product page</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul class="navbar">
+      <li><img src="images/logo.svg" alt="logo"></li>
+        <li><a href="#">Collections</a></li>
+          <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+              <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+    </ul>
+    <ul class="menu">
+      <li class="cartbtn">
+        <div class="indicator" id="indicator">1</div>
+        <img id="cartBtn" class="icon-cart" src="images/icon-cart.svg" alt="cart-icon"></li>
+      <li><img class="avatar active" src="images/image-avatar.png" alt="avatar"></li>
+    </ul>
+    <div class="panel-cart" id="cart">
+      <div class="head-cart"><h2>Cart</h2></div>
+      <div class="item-cart">
+
+        <div class="sneakers" id="item-sneakers">
+          <img class="cart-preview" src="images/image-product-1-thumbnail.jpg" alt="">
+            <div class="item-info">
+              <h2 class="item-title">Fall Limited Edition Sneakers</h2>
+              <h2 class="item-price">$125.00 x <p id="item-amount">3</p> <p class="price" id="item-price">$375.00</p></h2>
+            </div>
+          <div class="item-remove"><img src="images/icon-delete.svg" alt="" id="delete-btn"></div>
+        </div>
+
+        <div id="empty" class="empty">
+          <h2>Your cart is empty.</h2>
+        </div>
+
+    </div>
+      <div id="checkout" class="btn-cart"><button class="btn-add">Checkout</button></div>
+    </div>
+    <div class="modal" id="modal"></div>
+  </nav>
+
+  <main>
+    <div id="slideshow" class="slide">
+
+      <div class="slide-controls">
+        <div id="previous" class="previous"></div>
+        <div id="next" class="next"></div>
+      </div>
+      <div class="close-btn" id="close-btn"><img id="close-btn" src="images/icon-close.svg" alt=""></div>
+      <div class="show-img">
+        <img id="active-slide" src="images/image-product-1.jpg" alt="active-slide">
+      </div>
+
+      <div class="choose-img">
+        <div><img id="img0" onclick="changeImage(0)" id="choice-0" class="active-img" src="images/image-product-1-thumbnail.jpg" alt="0"></div>
+        <div><img id="img1" onclick="changeImage(1)" id="choice-1" class="" src="images/image-product-2-thumbnail.jpg" alt="1"></div>
+        <div><img id="img2" onclick="changeImage(2)" id="choice-2" class="" src="images/image-product-3-thumbnail.jpg" alt="2"></div>
+        <div><img id="img3" onclick="changeImage(3)" id="choice-3" class="" src="images/image-product-4-thumbnail.jpg" alt="3"></div>
+      </div>
+
+      <div id="slide-modal" class="slide-modal"></div>
+
+    </div>
+    <!-- Product preview -->
+    <div class="product-view" id="product-view">
+      <div class="product">
+        <img src="images/image-product-1.jpg" alt="preview">
+      </div>
+      <div class="thumbnail" alt="thumbnail">
+        <img src="images/image-product-1-thumbnail.jpg" alt="thumb1">
+        <img src="images/image-product-2-thumbnail.jpg" alt="thumb2">
+        <img src="images/image-product-3-thumbnail.jpg" alt="thumb3">
+        <img src="images/image-product-4-thumbnail.jpg" alt="thumb4">
+      </div>
+    </div>
+
+    <!-- Infomation -->
+    <div class="info">
+      <span class="header">Sneaker Company</span>
+
+      <h1 class="title">Fall Limited Edition Sneakers</h1>
+
+      <p class="descript">These low-profile sneakers are your perfect casual wear companion. Featuring a 
+      durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+
+      <div class="price">
+        <p class="cost">$125.00</p>
+        <p class="badge">50%</p>
+        <p class="discount">$250.00</p>
+      </div>
+      <div class="action">
+        <button class="minus" onclick="minus()">-</button>
+        <button class="plus" onclick="plus()">+</button>
+        <input type="number" value="1" id="quantity" min="0" max="100"><button class="btn-add" id="add-to-cart"><svg fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 3l-.743 2h-1.929l-3.474 12h-13.239l-4.615-11h16.812l-.564 2h-13.24l2.937 7h10.428l3.432-12h4.195zm-15.5 15c-.828 0-1.5.672-1.5 1.5 0 .829.672 1.5 1.5 1.5s1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm6.9-7-1.9 7c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5z"/></svg>Add to cart</button>
+      </div>
+    </div>
+  </main>
+  <script src="js/scripts.js"></script>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://thitiphatx.github.io/Portfolio">Thitiphat Kunrong</a>.
+  </footer>
+</body>
+</html>
